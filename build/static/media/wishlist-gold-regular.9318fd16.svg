@@ -1,0 +1,15 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="10.6mm" height="9.4mm" viewBox="0 0 30.2 26.7">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e3c886;
+        stroke: #e3c886;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <title>wishlist-regular</title>
+  <path class="cls-1" d="M1,8.3c0,9,14.1,17.2,14.1,17.2S29.2,17.3,29.2,8.3A7.1,7.1,0,0,0,22.4,1h-.1c-3.7,0-7.2,2.6-7.2,6.4C15.1,3.6,11.6,1,7.8,1S1,4.5,1,8.3Z"/>
+</svg>

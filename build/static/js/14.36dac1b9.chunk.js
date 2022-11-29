@@ -1,0 +1,2 @@
+(this.webpackJsonpfrontend=this.webpackJsonpfrontend||[]).push([[14],{313:function(t,s,n){"use strict";s.a=n.p+"static/media/addToCart-white.47327068.svg"}}]);
+//# sourceMappingURL=14.36dac1b9.chunk.js.map
