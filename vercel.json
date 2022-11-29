@@ -1,0 +1,6 @@
+{
+    "version": 2,
+    "name": "music-album",
+    "builds": [{ "src": "express_server.js", "use": "@vercel/node" }],
+    "routes": [{ "src": "/(.*)", "dest": "/express_server.js" }]
+}
