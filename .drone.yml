@@ -1,0 +1,161 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: prepare
+  image: node:14
+  pull: if-not-exists
+  commands:
+  - yarn
+
+- name: lint
+  image: node:14
+  pull: if-not-exists
+  commands:
+  - yarn lint
+  depends_on:
+  - prepare
+
+- name: build
+  image: node:14
+  pull: if-not-exists
+  commands:
+  - yarn build
+  depends_on:
+  - prepare
+
+trigger:
+  event:
+    exclude:
+    - cron
+
+---
+kind: pipeline
+type: docker
+name: stage
+
+platform:
+  os: linux
+  arch: amd64
+
+concurrency:
+  limit: 1
+
+steps:
+- name: docker
+  image: plugins/docker
+  pull: if-not-exists
+  settings:
+    build_args:
+    - VERSION=master-${DRONE_COMMIT}
+    password:
+      from_secret: dreg-password
+    registry: dreg.23c.se
+    repo: dreg.23c.se/sundora/frontend
+    tags:
+    - master
+    username: drone
+  when:
+    branch:
+    - master
+    event:
+    - push
+
+- name: deploy/stage
+  image: appleboy/drone-ssh
+  pull: if-not-exists
+  settings:
+    command_timeout: 60m
+    host: sundora-stage.23c.se
+    script:
+    - set -e
+    - cd /srv/src/gitlab.23c.se/customer-deployments/sundora-frontend-stage
+    - ./upgrade master 2>&1
+    ssh_key:
+      from_secret: stage_ssh
+    username: root
+  when:
+    status:
+    - success
+  depends_on:
+  - docker
+
+trigger:
+  branch:
+  - master
+  event:
+    include:
+    - push
+    exclude:
+    - cron
+  status:
+  - success
+
+depends_on:
+- default
+
+---
+kind: pipeline
+type: docker
+name: prod
+
+platform:
+  os: linux
+  arch: amd64
+
+concurrency:
+  limit: 1
+
+steps:
+- name: docker
+  image: plugins/docker
+  pull: if-not-exists
+  settings:
+    build_args:
+    - VERSION=${DRONE_TAG}
+    password:
+      from_secret: dreg-password
+    registry: dreg.23c.se
+    repo: dreg.23c.se/sundora/frontend
+    auto_tag: true
+    username: drone
+
+- name: deploy/prod
+  image: appleboy/drone-ssh
+  pull: if-not-exists
+  settings:
+    command_timeout: 60m
+    host: sundora-prod.23c.se
+    script:
+    - set -e
+    - cd /srv/src/gitlab.23c.se/customer-deployments/sundora-frontend-prod
+    - ./upgrade ${DRONE_TAG} 2>&1
+    ssh_key:
+      from_secret: prod_ssh
+    username: root
+  when:
+    status:
+    - success
+  depends_on:
+  - docker
+
+trigger:
+  event:
+    include:
+    - push
+    - tag
+    exclude:
+    - cron
+  ref:
+  - refs/tags/0.1.*
+  status:
+  - success
+
+depends_on:
+- default

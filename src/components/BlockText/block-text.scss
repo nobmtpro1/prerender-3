@@ -1,0 +1,39 @@
+.block-text-container {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  line-height: 2.5em;
+  margin-top: 13rem;
+  margin-left: -1px;
+  @include tablet {
+    margin-top: 5rem;
+  }
+  @include mobile {
+    margin-top: 5rem;
+  }
+  p {
+    display: block;
+    width: max-content;
+    margin: auto;
+  }
+  a {
+    display: block;
+    width: max-content;
+    margin: auto;
+  }
+}
+
+.marquee-container {
+  .marquee {
+    margin-left: -1px;
+  }
+  .overlay {
+    &::before {
+      background: none;
+    }
+    &::after {
+      background: none;
+    }
+  }
+}

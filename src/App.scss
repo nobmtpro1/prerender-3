@@ -1,0 +1,138 @@
+@import './styles/common';
+
+:root {
+  --data-main-color-general: #{$primary_color};
+  --data-separator-color-general: #{$border-green};
+  --btn-dot: #333;
+  --btn-dot-active: #e3c886;
+}
+
+html.noscroll {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  @include hover {
+    color: red;
+  }
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+* {
+  scrollbar-width: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: $black $grey;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+*::-webkit-scrollbar-track {
+  background: #f1f6f713;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: $black;
+  border-radius: 0px;
+}
+
+@import './styles/base/reset';
+@import './styles/base/function';
+@import './styles/base/grid';
+@import './styles/base/animations';
+
+@import './styles/utilities/u-spacing';
+@import './styles/utilities/u-text';
+@import './styles/utilities/toast';
+
+@import '~material-design-icons/iconfont/material-icons.css';
+
+@import './components/Loader/loader.scss';
+@import './components/Navigation/navigation.scss';
+@import './components/NavigationMobile/navigation-mobile.scss';
+
+@import './components/Banner/banner.scss';
+@import './components/BlockAllBrands/block-all-brands.scss';
+@import './components/BagIcon/bag-icon.scss';
+@import './components/BlockBlogs/block-blogs.scss';
+@import './components/BlockCarousel/block-carousel.scss';
+@import './components/BlockCollectEmail/block-collect-email.scss';
+@import './components/BlockCountDown/block-countdown.scss';
+@import './components/BlockIcon/block-icon.scss';
+@import './components/BlockInstagram/block-instagram.scss';
+@import './components/BlockFormField/block-form-field.scss';
+@import './components/BlockModal/block-modal.scss';
+@import './components/BlockProduct/block-product.scss';
+@import './components/BlockQuestionnaire/block-questionnaire.scss';
+@import './components/BlockQuestionnaire//BlockProduct/block-product.scss';
+@import './components/BlockSpotlight/block-spotlight.scss';
+@import './components/BlockVideo/block-video.scss';
+@import './components/Notfound/not-found.scss';
+@import './components/ProductBag/product-bag.scss';
+@import './components/ProductBag/product-item-bag.scss';
+@import './components/ProductSlide/product-slide.scss';
+@import './components/Slider/slider.scss';
+@import './components/SubNavigation/sub-navigation.scss';
+@import './components/ProductDetail/product-detail.scss';
+@import './components/ProductDetail/product-detail-modal.scss';
+@import './components/ProductNoteModal/product-note-modal.scss';
+@import './components/FilterProductBox/filter-product-box.scss';
+@import './components/MyAccount/my-account.scss';
+@import './components/CheckoutForm/checkout-form.scss';
+@import './components/Review/reviews.scss';
+@import './components/LoginModal/login-modal.scss';
+@import './components/Map/map.scss';
+@import './components/StarRating/star-rating.scss';
+@import './components/Footer/footer.scss';
+@import './components/BlockText/block-text.scss';
+@import './components/CarouselVideo/carousel-video.scss';
+@import './components/Newsletter/newsletter.scss';
+@import './components/MyReturn/my-return.scss';
+@import './components/RewardPoints/reward-points.scss';
+@import './components/Transactions/transactions.scss';
+@import './components/DotLoader/dot-loader.scss';
+@import './components/VoucherSelector/voucher-selector.scss';
+@import './components/SundoraVIP/point-circle.scss';
+@import './components/CancelOrderModal/cancel-order-modal.scss';
+@import './components/RewardHistory/reward-history.scss';
+@import './components/SSLCommerzVerify/sslcommerz-verify.scss';
+@import './containers/RenderPage/render-page.scss';
+@import './containers/VerifyCustomerEmailPage/style.scss';
+@import './components/LdsLoader/lds-loader.scss';

@@ -1,0 +1,301 @@
+@import '../../styles/common';
+.site-CheckoutPage {
+  .free-shipping {
+    color: $primary_color;
+  }
+  overflow: hidden;
+  // padding-top: 194px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  .text-danger {
+    color: $danger_color;
+  }
+  @include tablet_under {
+    padding-top: 0px;
+  }
+  MAIN {
+    min-height: 100vh;
+    @include mobile {
+      padding-top: 80px;
+    }
+  }
+  SECTION.shopping-bag.checkout-bag-layout {
+    padding: 32px 0 0 54px;
+    @include mobile_tablet {
+      padding: 0;
+    }
+    .info-checkout {
+      > DIV {
+        justify-content: space-between;
+        margin-bottom: 8px;
+        > span:last-child {
+          font-weight: $font-weight-semi-bold;
+        }
+      }
+      margin-bottom: 16px;
+    }
+    .body {
+      overflow: unset;
+    }
+    .offer-box {
+      display: none;
+    }
+    // .remove-item {
+    //   display: none;
+    // }
+    button.checkout-box {
+      padding: 3em 1.5em;
+      box-shadow: unset;
+      @include mobile {
+        padding: 0;
+        margin-bottom: 2em;
+      }
+    }
+    .product-inf {
+      p {
+        @include font-size(14px);
+      }
+    }
+    .wrapper-items .product-item {
+      margin: 0;
+      border-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
+    .quantity-box {
+      input {
+        font-size: 18px;
+        padding-bottom: 5px;
+      }
+      // button {
+      //   display: none;
+      // }
+    }
+    .price {
+      padding-right: 28px;
+      h4 {
+        margin-top: auto;
+        font-weight: $font-weight-light;
+      }
+    }
+    // .variant-select {
+    //   border: none;
+    //   pointer-events: none;
+    //   cursor: default;
+    //   padding: 0;
+    //   font-size: 18px;
+
+    //   .react-dropdown-select-dropdown-handle {
+    //     display: none;
+    //   }
+    //   .react-dropdown-select-content span {
+    //     font-weight: $font-weight-light;
+    //   }
+    // }
+  }
+  .discount-all {
+    span:last-child {
+      color: $danger_color;
+    }
+  }
+  .discount-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    @include mobile {
+      margin-top: 16px;
+    }
+    input {
+      flex-grow: 1;
+      padding: 12px;
+      border: none;
+      border: 1px solid #dddddd;
+      margin-right: 16px;
+      height: 34px;
+    }
+    input[type='text']:disabled {
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+
+    button {
+      background: #2a676b;
+      font-size: 12px !important;
+      width: unset !important;
+      padding: 0.8em;
+      text-transform: uppercase;
+      color: #fff;
+      /* margin-top: 1em; */
+      letter-spacing: 0.1em;
+      min-width: 13em !important;
+      height: 100% !important;
+      min-height: 34px !important;
+      margin-top: 0 !important;
+      padding: 0 !important;
+      &:hover {
+        transition: 0.1s;
+        opacity: 0.7;
+      }
+    }
+
+    .affiliate-successful-text {
+      @include mobile {
+        font-size: 2.5vw;
+        padding: 2vw;
+        margin-top: 2vw;
+      }
+      width: 100%;
+      border: 1px #2a686b solid;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0.5vw;
+      height: auto;
+      min-height: 2.5vw;
+      font-size: 0.8vw;
+      color: #2a686b;
+      padding: 0.5vw;
+      text-align: center;
+    }
+  }
+  .lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 0px;
+    height: 16px;
+    bottom: 7px;
+    right: -8px;
+    height: unset;
+    transform: scale(0.3);
+    div:after {
+      content: ' ';
+      display: block;
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: $primary_color;
+      margin: -4px 0 0 -4px;
+    }
+  }
+  .vip-points {
+    margin-top: 1rem;
+    span {
+      font-weight: 700;
+    }
+  }
+
+  .voucher-box {
+    .available-vouchers {
+      justify-content: flex-start;
+      align-items: center;
+      .voucher-list {
+        order: 1;
+        width: 50%;
+        @include mobile {
+          order: 2;
+          width: 100%;
+        }
+      }
+      .voucher-point {
+        order: 2;
+        width: 50%;
+        @include mobile {
+          order: 1;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .terms-cond {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+
+    a {
+      color: $primary_color;
+      font-weight: 600;
+    }
+
+    .checkbox-button {
+      cursor: pointer;
+      display: block;
+      @include font-size(14px);
+      position: relative;
+
+      input:checked + .checkbox-button__control:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 10px;
+        height: 10px;
+        background-color: $primary_color;
+        border-radius: 1px;
+      }
+      input:checked + .checkbox-button__control {
+        border-color: $primary_color;
+      }
+
+      input {
+        font-size: 1rem;
+        line-height: 1.5;
+        // padding: 11px 23px;
+        border: 1px solid #dddddd;
+        border-radius: 0;
+        outline: 0;
+        background-color: $primary_color;
+      }
+      &__label {
+        font-weight: $font-weight-semi-bold;
+        @include font-size(16px);
+        a {
+          display: inline;
+          text-decoration: underline;
+        }
+      }
+      &__input {
+        opacity: 0;
+        position: absolute;
+      }
+      &__control {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 4px;
+        vertical-align: middle;
+        background-color: inherit;
+        color: $white;
+        border-radius: 1px;
+        border: 2px solid #dddddd;
+      }
+      &__control {
+        transform: scale(0.75);
+        margin-top: -1rem;
+      }
+    }
+  }
+
+  .cart-note {
+    color: #2a676b;
+    font-size: 1vw;
+    margin-top: 2vw;
+    font-weight: 600;
+    @media (min-width: 1400px) {
+      font-size: 0.8vw;
+      margin-top: 1.5vw;
+    }
+    @media (max-width: 700px) {
+      font-size: 2.5vw;
+      margin-top: 3vw;
+    }
+  }
+}

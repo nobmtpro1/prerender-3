@@ -1,0 +1,37 @@
+.u-pl-3 {
+  padding-left: get-vw(3) !important;
+}
+.u-p-0 {
+  padding: 0 !important;
+}
+
+@for $i from 0 through 100 {
+  @if $i%5==0 {
+    $target: (($i * 1px) / $base-font-size) * 1rem;
+    .u-mt-#{$i} {
+      margin-top: get-vw($i * 1px) !important;
+    }
+    .u-mr-#{$i} {
+      margin-right: get-vw($i * 1px) !important;
+    }
+    .u-mb-#{$i} {
+      margin-bottom: get-vw($i * 1px) !important;
+    }
+    .u-ml-#{$i} {
+      margin-left: get-vw($i * 1px) !important;
+    }
+
+    .u-pt-#{$i} {
+      padding-top: get-vw($i * 1px) !important;
+    }
+    .u-pr-#{$i} {
+      padding-right: get-vw($i * 1px) !important;
+    }
+    .u-pb-#{$i} {
+      padding-bottom: get-vw($i * 1px) !important;
+    }
+    .u-pl-#{$i} {
+      padding-left: get-vw($i * 1px) !important;
+    }
+  }
+}

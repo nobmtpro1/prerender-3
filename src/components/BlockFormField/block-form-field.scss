@@ -1,0 +1,280 @@
+@import '../../styles/common';
+
+SECTION.blk-form-field {
+  padding: 1em;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 16em;
+  position: relative;
+  z-index: 0;
+  .content {
+    position: relative;
+    max-width: 60%;
+    @include mobile_tablet {
+      max-width: 100%;
+    }
+    margin: 0 auto;
+    z-index: 99999;
+    background-color: $white;
+    padding: 35px !important;
+  }
+  PICTURE {
+    @include position(0, $zindex: 0);
+
+    IMG {
+      display: block;
+      width: 100%;
+      height: 100%;
+      filter: brightness(0.7);
+      object: {
+        fit: cover;
+        position: center;
+      }
+    }
+  }
+
+  .content {
+    IMG {
+      min-width: 6em;
+      display: inherit;
+      margin: 0 auto 2.5em;
+    }
+    padding: 1em 0 2em;
+    text-align: center;
+    & > * {
+      margin-bottom: 1em;
+    }
+    h3 {
+      @include font-size(20px);
+      font-weight: 300;
+      p {
+        @include font-size(30px);
+      }
+      span {
+        color: #ffa80f;
+        @include font-size(27px);
+        font-weight: 300;
+      }
+    }
+    input,
+    select {
+      @include font-size(14px);
+    }
+    input[type='radio'],
+    input[type='checkbox'] {
+      display: inline;
+      margin: unset;
+      border: none;
+      padding: unset;
+      width: 9%;
+      height: 20px;
+      margin-bottom: unset;
+      vertical-align: bottom;
+      @include font-size(14px);
+    }
+    // input[type='radio']:checked:after {
+    //   width: 20px;
+    //   height: 20px;
+    //   border-radius: 50%;
+    //   top: -2px;
+    //   left: -1px;
+    //   position: relative;
+    //   background-color: $primary_color;
+    //   border: 1px solid $black;
+    //   content: '';
+    //   display: inline-block;
+    //   visibility: visible;
+    // }
+    // input[type='checkbox']:checked:after {
+    //   width: 20px;
+    //   height: 20px;
+    //   top: 0;
+    //   left: 0;
+    //   position: relative;
+    //   background-color: $primary_color;
+    //   border-radius: 3px;
+    //   content: '✔';
+    //   color: $white;
+    //   text-align: center;
+    //   display: inline-block;
+    //   visibility: visible;
+    // }
+
+    button.btn-submit {
+      padding: 1em;
+      background: $primary_color;
+      display: block;
+      width: 85%;
+      margin: 1em auto;
+      color: $white;
+      @include font-size(14px);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+  }
+
+  p {
+    color: $black;
+    @include font-size(12px);
+  }
+  p.footer {
+    position: relative;
+    z-index: 99999;
+    text-align: left;
+    a {
+      text-decoration: underline;
+    }
+  }
+  .form-group {
+    margin-bottom: 12px;
+    > label {
+      text-align: left;
+      margin-bottom: 8px;
+      display: block;
+    }
+    flex-basis: 49%;
+    @include mobile {
+      flex-basis: 100%;
+    }
+    &.off-focus-label {
+      SECTION.adaptive-input {
+        label {
+          transform: translate(0, 6px) scale(0.8);
+        }
+      }
+    }
+  }
+  .form-group-radio {
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    width: 100%;
+    height: auto;
+    .text-choise {
+      font-weight: 600;
+      @include font-size(15px);
+      text-align: left;
+      padding-left: 4px;
+    }
+    .group-item {
+      padding: 4px;
+    }
+  }
+  .select-group {
+    padding-top: 8px !important;
+    .react-dropdown-select {
+      padding: 10px 8px;
+      font-size: 14px;
+      min-height: 30px;
+      width: 100%;
+      .react-dropdown-select-dropdown {
+        border: 1px solid $primary_color !important;
+        z-index: 99999;
+      }
+      .react-dropdown-select-item {
+        border: 1px solid $white;
+        padding: 8px 10px;
+      }
+      .react-dropdown-select-content {
+        .react-dropdown-select-option {
+          background: $primary_color !important;
+        }
+      }
+    }
+  }
+  .wrapper-form {
+    padding: 8px 32px 32px;
+    @include mobile {
+      padding: 8px 8px 32px;
+    }
+  }
+  .text-help {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+    position: relative;
+    .text-danger {
+      position: absolute;
+      top: 75%;
+      transform: translateY(-50%);
+      color: brown;
+      font-size: convert-rem(20);
+      font-weight: 600;
+    }
+  }
+  SECTION.adaptive-input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .validate-field {
+      background: $primary_color;
+      display: flex;
+      align-items: baseline;
+      @include font-size(14px);
+      padding: 8px;
+      color: $white;
+      position: absolute;
+      right: -24px;
+      transform: translateX(100%);
+      border-radius: 2px;
+      img {
+        width: 14px;
+        display: inherit;
+        transform: translateY(2px);
+        margin: 0 4px;
+      }
+    }
+    .validate-field::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-right: 7px solid $primary_color;
+      border-bottom: 5px solid transparent;
+      position: absolute;
+      left: 0px;
+      transform: translateX(-100%);
+      top: 8px;
+    }
+    input {
+      width: 100%;
+      height: 45px;
+      padding: 14px 16px 0 10px;
+      outline: 0;
+      border: 1px solid #ddd;
+      background: $white;
+      color: $black;
+      font-size: 15px;
+    }
+    textarea {
+      width: 100%;
+      padding: 24px 16px 0 10px;
+      outline: 0;
+      border: 1px solid #ddd;
+      background: $white;
+      color: $black;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+    label {
+      @include font-size(14px);
+      padding: 0 12px;
+      color: #999;
+      pointer-events: none;
+
+      position: absolute;
+      transform: translate(0, 15px) scale(1);
+      transform-origin: top left;
+      transition: all 0.2s ease-out;
+    }
+
+    &:focus-within label {
+      transform: translate(0, 6px) scale(0.8);
+    }
+
+    .Active {
+      transform: translate(0, 6px) scale(0.8);
+    }
+  }
+}

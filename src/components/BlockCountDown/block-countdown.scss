@@ -1,0 +1,184 @@
+@import '../../styles/common';
+
+SECTION.blk-countdown {
+  margin-bottom: 2em;
+  margin-top: 2em;
+  @include tablet_under {
+    margin-bottom: 0;
+    padding: 1em;
+  }
+  & > div {
+    box-shadow: 3px 4px 8px #e8e7e7;
+  }
+  DIV.section-square {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .bg-image {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: brightness(0.8);
+      }
+    }
+    .product-image {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      img {
+        width: 100%;
+        object-fit: contain;
+        height: 100%;
+        transform: translateY(-50%);
+      }
+      @include desktop {
+        &:after {
+          content: '';
+          display: block;
+          padding-bottom: 100%;
+        }
+      }
+    }
+  }
+  DIV.wrapper-content {
+    height: 100%;
+    @include flexbox(flex, row, nowrap, space-between, center, unset);
+    @include tablet_under {
+      padding: 1em 0 0;
+      flex-direction: column;
+    }
+    DIV.info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 60%;
+      padding-left: 2.5em;
+      @include tablet_under {
+        width: 100%;
+        text-align: center;
+      }
+      @include mobile {
+        padding-left: 0;
+      }
+      P:first-child {
+        margin-bottom: 3em;
+        text-transform: uppercase;
+        font-size: convert-rem(13);
+        @include tablet {
+          margin-bottom: 1em;
+        }
+      }
+      H2 {
+        margin-bottom: 0.5em;
+        font-size: 25px;
+        text-transform: uppercase;
+        font-weight: $font-weight-light;
+        font-size: convert-rem(25);
+        letter-spacing: 0.1em;
+        @include mobile {
+          margin-bottom: 0.4em;
+          font-weight: $font-weight-semi-bold;
+        }
+        @include tablet {
+          @include font-size(18px);
+        }
+      }
+      P {
+        margin-bottom: 1em;
+        font-size: convert-rem(19);
+        font-weight: $font-weight-light;
+        @include mobile {
+          margin-bottom: 0.2em;
+          font-size: convert-rem(16);
+        }
+      }
+      P:last-child {
+        margin-bottom: 0;
+        @include tablet {
+          font-size: convert-rem(18);
+        }
+      }
+      SPAN.price {
+        font-size: convert-rem(27);
+        @include mobile {
+          margin-top: 0.5em;
+          display: inline-block;
+        }
+        @include tablet {
+          font-size: convert-rem(20);
+        }
+      }
+    }
+    DIV.countdown-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 40%;
+      @include tablet_under {
+        width: 100%;
+        margin-top: 1.9em;
+      }
+      @include mobile {
+        margin-top: 1em;
+        H3 {
+          font-weight: $font-weight-semi-bold;
+        }
+      }
+      H3 {
+        font-size: convert-rem(41);
+        SPAN {
+          font-size: convert-rem(20);
+          font-weight: $font-weight-light;
+        }
+      }
+      Button {
+        border: 1px solid $secondary_color;
+        display: inline-block;
+        padding: 0.8em;
+        min-width: 55%;
+        text-align: center;
+        margin-top: 1em;
+        font-size: 14px;
+        text-transform: uppercase;
+        transition: 0.1s ease-in-out;
+        letter-spacing: 0.1em;
+        &:hover {
+          background: $secondary_color;
+          color: $white;
+        }
+      }
+    }
+    .time-group {
+      width: 50%;
+      margin-top: 1em;
+      UL {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        LI {
+          font-size: convert-rem(10);
+          text-align: center;
+          P {
+            font-size: convert-rem(20);
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+  IMG.right-bg {
+    min-width: 1.5em;
+    height: 100%;
+    @include mobile {
+      width: 80%;
+      min-height: 1.5em;
+      margin-top: 2em;
+    }
+  }
+}

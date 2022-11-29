@@ -1,0 +1,256 @@
+@import '../../styles/common';
+UL.blk-sub-nav {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  padding: 0.5em 1000em; /* trick from css-tricks comments */
+  margin: 0 -1000em; /* trick from css-tricks comments */
+  z-index: 101;
+  visibility: hidden;
+  opacity: 0;
+  background: $white;
+  transition: all 0.35s ease-in-out;
+  right: 0;
+  padding: 2em 0 0;
+  overflow: hidden;
+  > LI {
+    padding: 5px 0;
+    list-style: none;
+    margin: 0 12px;
+    min-width: 250px;
+    .container {
+      max-width: 100vw !important;
+    }
+  }
+  &.open-menu {
+    visibility: visible;
+    top: 100%;
+    opacity: 1;
+    z-index: 99999;
+    min-height: 12em;
+  }
+
+  .gg-chevron-right {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs, 1));
+    width: 22px;
+    height: 22px;
+    border: 2px solid transparent;
+    border-radius: 100px;
+  }
+  .gg-chevron-right::after {
+    content: '';
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    transform: rotate(-45deg);
+    right: 6px;
+    top: 4px;
+  }
+  H2 {
+    margin-bottom: 1em;
+    letter-spacing: 0.1em;
+    @include font-size(22px);
+    padding-left: 16%;
+    text-transform: uppercase;
+  }
+  .wrapper-sub-menu {
+    text-align: left;
+    padding-left: 16%;
+    padding-bottom: 16px;
+    // max-height: calc(100vh - 162px);
+    height: 86%;
+    gap: 8px;
+    display: flex;
+    > UL {
+      width: 50%;
+      @include window-width-between(1025px, 1380px) {
+        width: 55%;
+      }
+      > LI {
+        position: relative;
+        height: 32px;
+      }
+      > LI BUTTON,
+      LI A,
+      P {
+        display: flex;
+        padding: 0.6em 0.5em 0.6em 0;
+        justify-content: space-between;
+        white-space: nowrap;
+        font-size: 0.95em;
+        text-transform: uppercase;
+        width: 100%;
+        height: 32px;
+        i {
+          color: #d3d3d3;
+        }
+        &:hover {
+          color: $primary_color;
+          transition: 0.05s;
+          font-weight: $font-weight-bold;
+          i {
+            color: $black;
+          }
+          &.last-sub {
+            display: block !important;
+            animation: fadeIn 0.6s;
+          }
+        }
+      }
+      LI P {
+        cursor: default;
+      }
+      > LI:hover {
+        .last-sub {
+          display: block !important;
+          animation: fadeIn 0.7s;
+          margin-left: auto;
+          margin-top: -35px;
+          position: unset;
+        }
+        .last-sub {
+          display: block !important;
+          animation: fadeIn 0.7s;
+        }
+      }
+    }
+    .activeParent {
+      color: $primary_color;
+      transition: 0.05s;
+      font-weight: $font-weight-bold;
+      i {
+        color: $black;
+      }
+    }
+    .last-sub {
+      position: absolute;
+      right: 0;
+      width: 100%;
+      margin-right: -100%;
+      top: -30%;
+      padding-left: 1em;
+      display: none;
+      > Li A {
+        padding: 0;
+        padding-bottom: 7px;
+        display: block;
+        text-transform: inherit;
+        font-size: 0.85em !important;
+        &:hover {
+          color: $primary_color;
+          font-weight: $font-weight-semi-bold;
+        }
+      }
+      > LI BUTTON {
+        margin-bottom: 6px;
+        padding: 5px 0 !important;
+        font-size: 0.85em !important;
+        text-transform: unset !important;
+      }
+    }
+    .last-sub-flex {
+      // margin-bottom: 24px;
+      min-height: 100%;
+      margin-bottom: 0;
+      position: relative;
+      // margin-left: 11px;
+      overflow: auto;
+
+      & {
+        scrollbar-width: 6px;
+        // scrollbar-height: 4px;
+        scrollbar-width: thin;
+        scrollbar-color: $black $grey;
+      }
+      /* Works on Chrome/Edge/Safari */
+      &::-webkit-scrollbar {
+        width: 4px;
+        height: 8px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #f1f6f7;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: $black !important;
+        border-radius: 0px !important;
+      }
+      DIV {
+        margin-top: 0px;
+        transform: unset;
+        position: absolute;
+        overflow: auto;
+        > LI {
+          height: 32px;
+        }
+        > Li A {
+          padding: 0;
+          // padding-bottom: 7px;
+          height: 32px;
+          display: block;
+          font-size: 0.9em !important;
+          text-transform: inherit;
+          &:hover {
+            color: $primary_color;
+            font-weight: $font-weight-semi-bold;
+          }
+        }
+        > LI BUTTON {
+          // margin-bottom: 6px;
+          // padding: 5px 0 !important;
+          height: 26px;
+          height: 32px;
+          font-size: 0.9em !important;
+          text-transform: unset !important;
+          &:hover {
+            color: $primary_color;
+            font-weight: $font-weight-semi-bold;
+          }
+        }
+      }
+    }
+  }
+  .recommend-text {
+    color: #8d8c8c;
+    font-weight: 500;
+    margin-bottom: 1em;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .x-mandatory {
+    padding: 1em 0 2.5em;
+    > .col-2 {
+      min-width: 252px !important;
+    }
+    .wrapper {
+      padding: 0 32px;
+    }
+    .item-info {
+      h4,
+      p {
+        font-size: 0.85em;
+      }
+      h4 {
+        margin-bottom: 8px;
+      }
+      span {
+        @include font-size(14px);
+        // margin-top: 6px !important;
+      }
+    }
+  }
+}

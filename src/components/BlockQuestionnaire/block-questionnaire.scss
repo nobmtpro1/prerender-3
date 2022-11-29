@@ -1,0 +1,270 @@
+@import '../../styles/common';
+
+.site-questionnaire {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 40px 0px 40px 0px;
+  @include mobile {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .opacity-none {
+    opacity: 1 !important;
+  }
+  .container {
+    position: relative;
+    border-radius: 7px;
+    max-width: 71%;
+    padding: 1px 20px 20px 20px;
+    opacity: 0.94;
+    transition: 0.3s;
+    @include mobile_tablet {
+      max-width: 97%;
+    }
+    background: $primary_color;
+    .btn-back {
+      position: absolute;
+      position: relative;
+      left: 20px;
+      top: 35px;
+      color: $secondary_color;
+      font-weight: $font-weight-semi-bold;
+      font-size: convert-rem(16);
+      transition: 0.4s;
+      @include mobile {
+        top: 42px;
+        left: -5px;
+        font-size: convert-rem(14);
+      }
+      &:hover {
+        color: $white;
+        .ic-back {
+          filter: brightness(1) sepia(1) hue-rotate(0deg) saturate(0);
+        }
+      }
+      .ic-back {
+        position: absolute;
+        top: -27%;
+        left: -18%;
+        width: 30px;
+        transition: 0.4s;
+        @include tablet {
+          top: -30%;
+        }
+        @include mobile {
+          margin-left: auto;
+          margin-right: auto;
+          top: -163%;
+          left: 0;
+          right: 0;
+          text-align: center;
+        }
+      }
+      span {
+        padding-left: 30px;
+        @include mobile {
+          padding-left: unset;
+        }
+      }
+    }
+    .btn-home {
+      position: absolute;
+      top: 20px;
+      right: 47px;
+      @include mobile {
+        top: 14px;
+        right: 17px;
+      }
+      color: $secondary_color;
+      font-weight: $font-weight-semi-bold;
+      text-align: center;
+      transition: 0.4s;
+      .ic-home {
+        width: 30px;
+        transition: 0.4s;
+      }
+      span {
+        font-size: convert-rem(16);
+        @include mobile {
+          font-size: convert-rem(14);
+        }
+      }
+      &:hover {
+        color: $white;
+        .ic-home {
+          filter: brightness(1) sepia(1) hue-rotate(0deg) saturate(0);
+        }
+      }
+    }
+    .btn-next {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 25px;
+      font-size: convert-rem(20);
+      font-weight: $font-weight-semi-bold;
+      text-transform: uppercase;
+      color: $secondary_color;
+      position: relative;
+      .material-icons {
+        position: absolute;
+        top: 1%;
+        right: -16%;
+      }
+    }
+    .logo {
+      overflow: hidden;
+      margin-top: -20px;
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 145px;
+        margin-top: -40px;
+        overflow: hidden;
+        @include mobile_tablet {
+          width: 135px;
+          margin-top: -38px;
+        }
+      }
+    }
+    .text-question-step {
+      margin-top: 25px;
+      color: $secondary_color;
+      font-weight: $font-weight-normal;
+      font-size: x-large;
+      text-align: center;
+    }
+    .animation-slider {
+      --slider-height-percentage: 35%;
+      --slider-transition-duration: 250ms;
+      --organic-arrow-thickness: 1px;
+      --organic-arrow-border-radius: 0px;
+      --organic-arrow-height: 37px;
+      --organic-arrow-color: #3c2b65;
+      --control-button-width: 5%;
+      --control-button-height: 45%;
+      --control-button-background: #2a676b;
+      --content-background-color: #2a676b;
+      --control-bullet-color: #2a676b;
+      --control-bullet-active-color: #2a676b;
+      --loader-bar-color: #851515;
+      --loader-bar-height: 15px;
+      @include tablet {
+        --slider-height-percentage: 75%;
+      }
+      @include mobile {
+        --slider-height-percentage: 110%;
+      }
+    }
+    .detail-question {
+      background: $primary_color;
+      .text-question-name {
+        margin-top: -35px;
+        color: $white;
+        font-weight: $font-weight-semi-bold;
+        text-align: center;
+        text-transform: uppercase;
+        @include tablet {
+          font-size: convert-rem(24);
+        }
+        @include mobile {
+          font-size: convert-rem(20);
+        }
+      }
+      .block-answer {
+        margin: 5px;
+        border-radius: 16px;
+        border: 2px $white solid;
+        padding: 20px;
+        color: $white;
+        text-align: center;
+        transition: 0.3s;
+        p {
+          font-size: convert-rem(20);
+        }
+        &:hover {
+          border: 2px $secondary_color solid;
+          background: $secondary_color;
+          color: $primary_color;
+        }
+      }
+      .block-answer-active {
+        border: 2px $secondary_color solid;
+        color: $secondary_color;
+      }
+    }
+    .group-dot {
+      // margin-top: 20px;
+      text-align: center;
+      .btn-dot {
+        width: 18px;
+        height: 18px;
+        margin: 3px;
+        transition: 0.3s;
+        border-radius: 50%;
+        border: 1px $secondary_color solid;
+        background: var(--btn-dot);
+      }
+      .btn-dot-active {
+        background: var(--btn-dot-active);
+      }
+    }
+    .product-not-exists {
+      height: 400px;
+      text-align: center;
+      position: relative;
+      H2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $secondary_color;
+        @include mobile {
+          left: 15%;
+          transform: translate(-10%, -50%);
+        }
+        SPAN {
+          color: #ffe5a6;
+          cursor: pointer;
+          transition: 0.3s;
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+  .blk-questionnaire-product {
+    @include desktop {
+      padding-top: unset;
+    }
+    .list-product {
+      .awssld__container {
+        @include mobile {
+          padding-bottom: var(--slider-height-percentage);
+        }
+      }
+    }
+    .container {
+      max-width: 100%;
+      .line-center {
+        width: 50px;
+      }
+    }
+  }
+  .line-center {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 50px;
+    height: 9px;
+    background: $secondary_color;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    @include mobile {
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+  }
+}

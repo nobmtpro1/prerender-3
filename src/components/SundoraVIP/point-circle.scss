@@ -1,0 +1,124 @@
+@import '../../styles/common';
+
+.circle-point {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  display: grid;
+  height: 100%;
+  text-align: center;
+  place-items: center;
+  @include mobile {
+    padding-top: 13px;
+  }
+  .circular {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    transform: scale(1.5);
+    @include mobile {
+      transform: scale(1);
+    }
+  }
+  .circular .inner {
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    left: 50%;
+    height: 80px;
+    width: 80px;
+    margin: -40px 0 0 -40px;
+    background: $white;
+    border-radius: 100%;
+  }
+  .circular .text-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    .title {
+      @include font-size(23px);
+      font-weight: $font-weight-bold;
+    }
+    .sub {
+      @include font-size(12px);
+    }
+  }
+  .circular .bar {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    -webkit-border-radius: 100%;
+    clip: rect(0px, 100px, 100px, 50px);
+    background: #e8e8e8;
+  }
+  .circle .bar .progress {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-border-radius: 100%;
+    clip: rect(0px, 50px, 100px, 0px);
+    // background: $secondary_color;
+    background: rgb(227, 200, 134);
+    // background: linear-gradient(
+    //   90deg,
+    //   rgba(227, 200, 134, 1) 33.3%,
+    //   rgba(254, 230, 174, 1) 66.6%,
+    //   rgba(255, 234, 183, 1) 100%
+    // );
+  }
+  .circle .left .progress {
+    z-index: 1;
+  }
+  .circle .right {
+    transform: rotate(180deg);
+    z-index: 3;
+  }
+  .circle .right .progress {
+    background: rgb(227, 200, 134);
+    // background: linear-gradient(
+    //   90deg,
+    //   rgba(227, 200, 134, 1) 33.3%,
+    //   rgba(254, 230, 174, 1) 66.6%,
+    //   rgba(255, 234, 183, 1) 100%
+    // );
+  }
+  // @keyframes right {
+  //   100% {
+  //     transform: rotate(180deg);
+  //   }
+  // }
+}
+.plus-point {
+  text-align: center;
+  height: 100%;
+  @include mobile {
+    padding: 15px;
+  }
+  .text-number {
+    font-size: 32px;
+    font-weight: $font-weight-bold;
+    padding-bottom: 5px;
+  }
+  .text-subtitle {
+    font-size: 15px;
+  }
+  .text-type {
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+  }
+}
+.sub-point {
+  text-align: center;
+  height: 100%;
+  @include mobile {
+    padding: 15px;
+  }
+  .text-point {
+    font-weight: $font-weight-semi-bold;
+    @include font-size(17px);
+  }
+}

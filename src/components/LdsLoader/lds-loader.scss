@@ -1,0 +1,21 @@
+@import '../../styles/common';
+
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    // bottom: 7px;
+    // right: -8px;
+    // height: unset;
+    transform: scale(0.3);
+    div:after {
+      content: ' ';
+      display: block;
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: $primary_color;
+      margin: -4px 0 0 -4px;
+    }
+  }

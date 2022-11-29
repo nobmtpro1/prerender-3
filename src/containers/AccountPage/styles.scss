@@ -1,0 +1,97 @@
+@import '../../styles/common';
+.site-AccountPage {
+  overflow: hidden;
+  // padding-top: 194px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  @include tablet_under {
+    padding-top: 0px;
+  }
+  @include tablet {
+    padding-top: 0px;
+  }
+  MAIN {
+    min-height: 100vh;
+    margin-top: 5em;
+    padding-bottom: 48px;
+  }
+  .side-navigation-panel-select-option-wrap {
+    display: flex;
+    align-items: center;
+  }
+  .icon {
+    width: 24px;
+    margin-right: 8px;
+    img {
+      display: inherit;
+    }
+  }
+}
+.checkbox-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  @include font-size(14px);
+  margin-bottom: 32px;
+  margin-top: 12px;
+
+  input {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 11px 23px;
+    border: 1px solid #dddddd;
+    border-radius: 0;
+    outline: 0;
+    background-color: $primary_color;
+  }
+  &__label {
+    font-weight: $font-weight-semi-bold;
+    @include font-size(16px);
+  }
+  &__input {
+    opacity: 0;
+    position: absolute;
+  }
+  &__control {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    vertical-align: middle;
+    background-color: inherit;
+    color: $white;
+    border-radius: 1px;
+    border: 2px solid #dddddd;
+  }
+  &__input:checked + .checkbox-button__control:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    background-color: $primary_color;
+    border-radius: 1px;
+  }
+  &__input:checked + .checkbox-button__control {
+    border-color: $primary_color;
+  }
+  &__control {
+    transform: scale(0.75);
+  }
+
+  .alpha-box {
+    display: flex;
+    margin-left: -1.75em;
+    margin-bottom: 1em;
+    > label {
+      width: 1.5em;
+      @include font-size(18px);
+      font-weight: $font-weight-semi-bold;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@import '../../styles/common';
+
+NAV.side-navigation-panel {
+  background: $primary_color;
+  color: $white;
+  text-transform: uppercase;
+  @include font-size(14px);
+  padding: 16px 0;
+  @include mobile {
+    padding: 0;
+    display: flex;
+    overflow: auto;
+    .side-navigation-panel-select-option-text {
+      white-space: nowrap;
+    }
+    > UL {
+      border-right: 1px solid #cccccc5c;
+      border-left: 1px solid #cccccc5c;
+    }
+    .icon {
+      width: 19px;
+    }
+  }
+  @include tablet {
+    padding: 0;
+    display: flex;
+    overflow: auto;
+    .side-navigation-panel-select-option-text {
+      white-space: nowrap;
+    }
+    > UL {
+      border-right: 1px solid #cccccc5c;
+      border-left: 1px solid #cccccc5c;
+    }
+    .icon {
+      width: 19px;
+    }
+  }
+  .side-navigation-panel-select {
+    &-option {
+      padding: 18px 16px;
+      &:hover {
+        cursor: pointer;
+        background: #2d6a6e;
+      }
+      &-selected {
+        background: #265c60;
+        &:hover {
+          cursor: pointer;
+          background: #265c60;
+        }
+      }
+    }
+    &-inner-wrap {
+      padding: 8px 16px;
+    }
+    &-inner-option {
+      padding: 0 8px;
+    }
+  }
+}

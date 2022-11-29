@@ -1,0 +1,419 @@
+@import '../../styles/common';
+.site-FilteredProductPage {
+  overflow: hidden;
+  // padding-top: 194px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  @include tablet_under {
+    // padding-top: 70px;
+  }
+  @include tablet {
+    padding-top: 0px;
+  }
+  .wrapper-breadcrumb {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    & .blk-icon ul li {
+      color: var(--data-main-color-general) !important;
+      border-color: var(--data-main-color-general) !important;
+    }
+  }
+  .banner-all-product {
+    position: relative;
+    color: #fff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 16vw;
+    margin: 1em 0 0;
+    &.m-0-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    IMG {
+      max-height: 16em;
+      object-fit: cover;
+      width: 100%;
+    }
+    @include tablet_under {
+      min-height: 32vw;
+      margin: 3em 0 1em;
+      padding-top: 160px;
+    }
+  }
+  // .brand-filter {
+  //   display: none;
+  // }
+  .carousel-block {
+    margin-top: -5em;
+  }
+  .breadcrumb {
+    margin: 1em 0;
+    ul {
+      display: flex;
+    }
+    li:last-child {
+      &::after {
+        content: '';
+        background-image: none;
+      }
+    }
+    li {
+      font-size: 14px;
+      text-transform: uppercase;
+      padding: 8px 8px 8px 0;
+    }
+    li::after {
+      display: inline-block;
+      content: ' ';
+      background-image: url('../../images/icons/arrow-breadcrum.svg');
+      background-size: contain;
+      height: 9px;
+      margin: 0 0px 0 8px;
+      width: 12px;
+      background-repeat: no-repeat;
+      opacity: 0.8;
+    }
+  }
+  h1.title-block-default {
+    padding: 8px 0;
+    font-weight: $font-weight-light;
+  }
+  .content-block {
+    max-width: none;
+    padding: 8px 0;
+    HR {
+      border: revert;
+      background-color: unset;
+    }
+    P {
+      max-width: 75%;
+      @include mobile {
+        max-width: 100%;
+      }
+    }
+  }
+  DIV.video-product-brand {
+    SECTION.blk-video {
+      padding: 0;
+      DIV.wrapper-video {
+        height: 450px;
+        @include tablet_under {
+          height: 200px;
+        }
+        @include tablet {
+          height: 446px;
+        }
+      }
+      DIV.content-video {
+        background: $white;
+        color: $primary_color;
+        max-height: 450px;
+        @include mobile {
+          max-height: unset;
+        }
+      }
+      .content > * {
+        text-transform: unset;
+      }
+      DIV.row {
+        box-shadow: 3px 4px 8px #e8e7e7;
+      }
+      A {
+        background: $white;
+        color: $primary_color;
+        margin-top: 4em;
+      }
+    }
+  }
+
+  .block-icon-1 {
+    display: flex;
+    justify-content: flex-end;
+    @include mobile {
+      display: none;
+    }
+    SECTION.blk-icon {
+      background: none;
+      color: $primary_color;
+      margin: 0;
+      padding: 2em 0 0;
+      > DIV {
+        padding: 0;
+      }
+      UL {
+        justify-content: flex-start;
+        LI {
+          border: 1px solid $primary_color;
+          height: 100%;
+          margin-left: 1em;
+          padding: 0px 12px;
+          height: 36px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        PICTURE {
+          display: flex;
+          align-items: center;
+        }
+        IMG {
+          width: auto;
+          min-width: unset;
+          height: 100%;
+          margin: 0 8px 0 0;
+          max-height: 24px;
+        }
+        SPAN {
+          width: unset;
+        }
+      }
+    }
+  }
+
+  MAIN {
+    > .row {
+      margin: 1em -12px 3em;
+    }
+  }
+
+  SECTION.sidebar-left {
+    H3 {
+      font-weight: unset;
+      text-transform: uppercase;
+      margin-bottom: 0.7em;
+    }
+  }
+  .btn-loadmore {
+    padding: 0.8em 4em;
+    border: 1px solid $primary_color;
+    margin-top: 1.5em;
+    color: $primary_color;
+    font-weight: $font-weight-semi-bold;
+    transition: 0.1s ease-in-out;
+    margin-top: 1em;
+    margin: 0 auto;
+    @include font-size(14px);
+    text-transform: uppercase;
+    display: inherit;
+    &:hover,
+    &.loading {
+      background: $primary_color;
+      color: $white;
+    }
+  }
+  .lds-roller {
+    display: inline-block;
+    position: relative;
+    width: unset;
+    top: 0;
+    height: unset;
+    transform: scale(0.3) translate(-118px, -59px);
+
+    &.product-loading {
+      display: block;
+      margin: 6rem auto;
+      position: relative;
+      width: 0px;
+      height: 16px;
+      bottom: 7px;
+      right: -8px;
+      height: unset;
+      transform: scale(0.5);
+      div:after {
+        content: ' ';
+        display: block;
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: $primary_color;
+        margin: -4px 0 0 -4px;
+      }
+    }
+  }
+  .loading-product {
+    &.not-found {
+      width: 100%;
+      text-align: center;
+      margin-top: 6rem;
+      font-weight: $font-weight-bold;
+      color: $primary_color;
+    }
+  }
+  SECTION.blk-product {
+    padding-top: 0;
+    padding-bottom: 1em;
+    @include mobile {
+      > div {
+        padding: 0;
+      }
+    }
+    .list-product {
+      @include mobile {
+        flex-wrap: wrap;
+        overflow-x: unset;
+        padding-bottom: 2em;
+        > div {
+          width: 50%;
+        }
+      }
+    }
+    DIV.info {
+      padding: 0;
+      span {
+        @include font-size(14px);
+      }
+      span > span {
+        @include font-size(20px);
+        font-weight: $font-weight-bold;
+      }
+      .title-item {
+        font-weight: $font-weight-semi-bold;
+        text-transform: unset;
+      }
+      .title-info {
+        @include font-size(15px);
+      }
+    }
+  }
+
+  SECTION.sort-box {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1em;
+    button.btn-filter-mobile {
+      border: 1px solid #cccccc;
+      padding: 8px;
+      width: 90px;
+      margin-right: 8px;
+      color: $black;
+      letter-spacing: 0.05em;
+    }
+    > DIV {
+      @include mobile {
+        min-width: 10em;
+      }
+      min-width: 12em;
+    }
+    .react-dropdown-select-input {
+      @include font-size(14px);
+    }
+    .primary-select {
+      padding: 4px 8px;
+      @include font-size(14px);
+      .react-dropdown-select-dropdown {
+        min-width: max-content;
+        top: 43px;
+        left: -1px;
+        width: 192px;
+        padding: 8px 4px;
+      }
+    }
+    .primary-select .react-dropdown-select-item:hover,
+    .primary-select .react-dropdown-select-item-selected {
+      background: none !important;
+      color: #232323;
+      font-weight: 700;
+    }
+  }
+
+  // custom checkbox button
+
+  input[type='checkbox'] {
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  .checkbox-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    @include font-size(14px);
+    margin-bottom: 0.4em;
+    input {
+      font-size: 1rem;
+      line-height: 1.5;
+      padding: 11px 23px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 0;
+      outline: 0;
+      background-color: transparent;
+    }
+    &__input {
+      opacity: 0;
+      position: absolute;
+    }
+    &__control {
+      position: relative;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 4px;
+      vertical-align: middle;
+      background-color: inherit;
+      color: $white;
+      border-radius: 1px;
+      border: 2px solid $white;
+    }
+    &__input:checked + .checkbox-button__control:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 10px;
+      height: 10px;
+      background-color: $white;
+      border-radius: 1px;
+    }
+    &__input:checked + .checkbox-button__control {
+      border-color: $white;
+    }
+    &__control {
+      transform: scale(0.75);
+    }
+
+    &__label {
+      text-transform: uppercase;
+    }
+  }
+  .wrapper-alpha-box {
+    height: 18em;
+    margin-left: -24px;
+    overflow-y: scroll;
+    position: relative;
+    .check-box-group {
+      // margin-top: -10px;
+    }
+  }
+  .wrapper-scent {
+    height: 14em;
+    overflow: auto;
+    overflow-y: scroll;
+    position: relative;
+  }
+  .alpha-box {
+    display: flex;
+    margin-bottom: 1em;
+    margin-left: 0 !important;
+    > label {
+      width: 1.5em;
+      @include font-size(18px);
+      font-weight: $font-weight-semi-bold;
+    }
+  }
+  position: relative;
+  overflow: hidden;
+
+  .stick-icon {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 6;
+  }
+}

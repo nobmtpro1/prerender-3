@@ -1,0 +1,16 @@
+SECTION.rating {
+  // @include font-size(20px);
+  transition: 0.2s all;
+  display: flex;
+  margin-top: 8px;
+  img {
+    width: 18px;
+    opacity: 0.8;
+  }
+  .title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-right: 8px;
+    // color: #464540;
+  }
+}

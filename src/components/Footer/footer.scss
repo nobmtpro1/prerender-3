@@ -1,0 +1,146 @@
+@import '../../styles/common';
+
+FOOTER.blk-footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 6;
+  padding-bottom: 3rem;
+  @include mobile {
+    margin-bottom: 0;
+  }
+
+  .location {
+    text-transform: uppercase;
+  }
+
+  @include flexbox(flex, row, nowrap, center, flex-start, stretch);
+  color: $white;
+  background-color: var(--data-main-color-general);
+  border-top: 2px solid var(--data-separator-color-general);
+
+  @include mobile {
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+  }
+  &:after {
+    // url('../../images/image-footer/image.webp')
+    content: url('../../images/block-video/bg-video-block.webp');
+    position: absolute;
+    z-index: 1;
+    display: block;
+    bottom: 1rem;
+    @include tablet {
+      bottom: 2rem;
+    }
+    @include mobile {
+      position: relative;
+      margin: 16px auto 0;
+      // margin: -4rem auto 0;
+    }
+  }
+
+  h3 {
+    @include font-size(14px);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: $font-weight-normal;
+    margin-bottom: 16px;
+    min-height: 24px;
+  }
+
+  HR {
+    border-left: 1px solid $border-grey;
+    margin: 4em 0px 4em;
+    @include mobile {
+      display: none;
+    }
+  }
+
+  DIV.content {
+    position: relative;
+    z-index: 2;
+    @include flexbox(flex, row, nowrap, space-between, normal, stretch);
+    @include mobile {
+      flex-direction: column;
+    }
+    & > DIV {
+      flex-grow: 1;
+      max-width: 48%;
+      padding: 7em 0px;
+      text-align: center;
+      @include flexbox(flex, row, wrap, space-around, normal, stretch);
+      @include mobile {
+        padding: 0;
+        max-width: 100%;
+        flex-direction: column;
+      }
+    }
+  }
+  DIV.item-box {
+    text-align: left;
+    max-width: 50%;
+    flex-grow: 1;
+    padding: 0 2em;
+    letter-spacing: 0.1em;
+    flex-basis: 33.33%;
+    @include font-size(12px);
+    @include mobile {
+      max-width: 100%;
+      padding: 2em 2em 0 2em;
+    }
+    button {
+      color: $white;
+    }
+    .ic-first-text {
+      position: relative;
+      IMG {
+        position: absolute;
+        left: -23px;
+        width: 1.4em;
+      }
+    }
+  }
+  UL {
+    margin-bottom: convert-rem(16);
+    LI {
+      margin-bottom: convert-rem(8);
+      A {
+        position: relative;
+        &:hover {
+          color: #e3c886;
+        }
+        .icon-format {
+          position: absolute;
+          font-size: convert-rem(23);
+        }
+      }
+    }
+  }
+  UL.social-group {
+    max-width: 6rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    @include flexbox(flex, row, nowrap, center, center, unset);
+    margin-top: 2em;
+    LI {
+      margin-right: auto;
+    }
+    IMG {
+      width: 1em;
+      &.linkedin {
+        font-size: 1.2rem;
+        color: white;
+      }
+    }
+    LI:last-child IMG {
+      width: 1.5em;
+    }
+    a {
+      display: block;
+      margin: 0 8px;
+    }
+  }
+}

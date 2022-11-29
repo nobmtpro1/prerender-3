@@ -1,0 +1,172 @@
+@import '../../styles/common';
+.site-forgotPassword {
+  overflow: hidden;
+  // padding-top: 194px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  .section-container {
+    padding-bottom: 85px;
+    min-height: 81vh;
+    padding-top: 12%;
+    @include mobile {
+      padding-top: 40%;
+    }
+  }
+  @include tablet_under {
+    padding-top: 0px;
+  }
+  .status-box {
+    img {
+      width: 80px;
+      margin-bottom: 16px;
+    }
+    h3 {
+      font-size: 24px;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    h4 {
+      font-size: 16px;
+      margin-bottom: 16px;
+      font-weight: $font-weight-light;
+    }
+    a {
+      text-decoration: underline;
+    }
+    text-align: center;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  }
+  img.resp-ic {
+    display: inherit;
+    margin: 0 auto;
+    width: 60%;
+  }
+  MAIN {
+    min-height: 81vh;
+  }
+  .form-forgot-password {
+    h1 {
+      margin-bottom: 8px;
+    }
+    .form-group {
+      margin-top: 24px;
+      width: 80%;
+      @include mobile_tablet {
+        width: 100%;
+      }
+    }
+    .button-group {
+      position: relative;
+      margin-top: 16px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .reset-btn {
+        background: $primary_color;
+        color: $white;
+        padding: 10px 20px;
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          box-shadow: 1px 3px 6px #dddddd;
+        }
+        &:disabled{
+          background: $grey;
+          color: $black;
+        }
+      }
+      .loader-container {
+        position: relative;
+        .loader{
+          left: 0px !important;
+          top: 0 !important;
+        }
+      }
+    }
+  }
+  SECTION.adaptive-input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .validate-field {
+      background: $primary_color;
+      display: flex;
+      align-items: baseline;
+      @include font-size(14px);
+      padding: 8px 12px 8px 8px;
+      color: $white;
+      position: absolute;
+      right: -24px;
+      transform: translateX(100%);
+      border-radius: 2px;
+      img {
+        width: 14px;
+        display: inherit;
+        transform: translateY(2px);
+        margin: 0 4px;
+      }
+    }
+    .validate-field::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-right: 7px solid $primary_color;
+      border-bottom: 5px solid transparent;
+      position: absolute;
+      left: 1px;
+      transform: translateX(-100%);
+      top: 8px;
+    }
+    input {
+      width: 100%;
+      height: 45px;
+      padding: 14px 16px 0 10px;
+      outline: 0;
+      border: 1px solid #ddd;
+      background: $white;
+      color: $black;
+      font-size: 16px;
+    }
+    textarea {
+      width: 100%;
+      padding: 24px 16px 0 10px;
+      outline: 0;
+      border: 1px solid $white;
+      background: $white;
+      color: $black;
+      font-size: 16px;
+    }
+    label {
+      @include font-size(14px);
+      padding: 0 12px;
+      color: #999;
+      pointer-events: none;
+
+      position: absolute;
+      transform: translate(0, 15px) scale(1);
+      transform-origin: top left;
+      transition: all 0.2s ease-out;
+    }
+
+    &:focus-within label {
+      transform: translate(0, 6px) scale(0.8);
+    }
+
+    .Active {
+      transform: translate(0, 6px) scale(0.8);
+    }
+  }
+}

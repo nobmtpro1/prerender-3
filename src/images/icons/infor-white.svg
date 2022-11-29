@@ -1,0 +1,19 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="7.8mm" height="7.8mm" viewBox="0 0 22 22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>infor-white-01</title>
+  <circle class="cls-1" cx="11" cy="11" r="10"/>
+  <path class="cls-2" d="M11,5.5a1.2,1.2,0,0,1,1.2,1.2,1.2,1.2,0,0,1-2.4,0,1.1,1.1,0,0,1,1.1-1.2Zm1,10.8H10v-7h2Z"/>
+</svg>

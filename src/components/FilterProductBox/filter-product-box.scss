@@ -1,0 +1,340 @@
+SECTION.filter-box {
+  .checkbox-button__control {
+    display: table !important;
+  }
+  .text-title-filter {
+    @include font-size(18px);
+    font-weight: $font-weight-normal;
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 26px;
+    .material-icons {
+      bottom: -1px;
+      left: 0;
+      position: absolute;
+    }
+  }
+  DIV.min-max {
+    label {
+      display: block;
+      @include font-size(14px);
+      margin-bottom: 8px;
+    }
+    h3 {
+      width: 100%;
+    }
+    .text-price-range {
+      @include font-size(14px);
+    }
+    .input-range {
+      height: 2rem;
+      .input-range__track--background {
+        height: 0.4rem;
+      }
+      .input-range__track--active {
+        background: $secondary_color;
+        height: 0.4rem;
+      }
+      .input-range__slider {
+        background: $secondary_color;
+        border: 1px solid $white;
+      }
+      .input-range__label--value {
+        display: none;
+      }
+    }
+  }
+  .wrapper-filter-box {
+    color: $white;
+    background: var(--data-main-color-general);
+  }
+  .wrapper-filter-box > DIV {
+    padding: 2em;
+    border-bottom: 1px solid var(--data-separator-color-general);
+  }
+  SECTION.result-filter-box {
+    margin-bottom: 0.7em;
+    .result-list {
+      display: flex;
+      flex-wrap: wrap;
+      LI {
+        border: 1px solid var(--data-main-color-general);
+        margin-right: 0.5em;
+        padding: 2px 8px;
+        display: flex;
+        margin-bottom: 0.5em;
+        font-size: 0.875rem;
+        align-items: center;
+        justify-content: space-between;
+        @include font-size(14px);
+        @include tablet {
+          @include font-size(12px);
+        }
+        I,
+        SPAN {
+          color: var(--data-main-color-general);
+        }
+        .gg-close {
+          box-sizing: border-box;
+          position: relative;
+          display: block;
+          transform: scale(var(--ggs, 0.8));
+          width: 22px;
+          height: 22px;
+          border: 2px solid transparent;
+          border-radius: 40px;
+          color: var(--data-main-color-general);
+        }
+
+        .gg-close::after,
+        .gg-close::before {
+          content: '';
+          display: block;
+          box-sizing: border-box;
+          position: absolute;
+          width: 16px;
+          height: 2px;
+          background: currentColor;
+          transform: rotate(45deg);
+          border-radius: 5px;
+          top: 8px;
+          left: 1px;
+        }
+
+        .gg-close::after {
+          transform: rotate(-45deg);
+        }
+      }
+      button {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  .header-filter {
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    button.btn-clear {
+      display: block;
+      margin-left: auto;
+      color: var(--data-main-color-general);
+      @include font-size(15px);
+      text-decoration: underline;
+    }
+  }
+  // mobile ver
+  &.filter-box-mobile {
+    position: fixed;
+    z-index: 99999;
+    background: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: 0.2s all;
+    overflow: auto;
+    min-height: 100vh;
+    .result-list {
+      LI {
+        border: 1px solid $black !important;
+        SPAN,
+        i {
+          color: $black !important;
+        }
+      }
+    }
+    &.active {
+      opacity: 1;
+      transform: translateX(0%);
+      transition: 0.2s all;
+      position: fixed;
+    }
+    .btn-group-mobile {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      padding: 1em !important;
+      justify-content: space-between;
+      @include font-size(14px);
+      margin-bottom: 5em;
+      button {
+        border: 1px solid $primary_color;
+        padding: 14px;
+        background: $primary_color;
+        color: $white;
+
+        width: 48%;
+        text-transform: uppercase;
+      }
+      button:first-child {
+        border: 1px solid $primary_color;
+        padding: 10px;
+        flex-basis: 50%;
+        background: $white;
+        color: $primary_color;
+      }
+    }
+    .gg-close {
+      box-sizing: border-box;
+      position: relative;
+      display: block;
+      transform: scale(var(--ggs, 0.8));
+      width: 22px;
+      height: 22px;
+      border: 2px solid transparent;
+      border-radius: 40px;
+    }
+
+    .gg-close::after,
+    .gg-close::before {
+      content: '';
+      display: block;
+      box-sizing: border-box;
+      position: absolute;
+      width: 16px;
+      height: 2px;
+      background: currentColor;
+      transform: rotate(45deg);
+      border-radius: 5px;
+      top: 8px;
+      left: 1px;
+    }
+
+    .gg-close::after {
+      transform: rotate(-45deg);
+    }
+    h3 {
+      padding: 0.5em 1.6em;
+      background: #fdf9f6;
+    }
+    .result-filter-box {
+      padding: 0 2em;
+    }
+    .wrapper-filter-box {
+      background: $white;
+      color: $black;
+      > DIV {
+        padding: 2em;
+        border-bottom: unset;
+      }
+    }
+    .order {
+      padding: 0 !important;
+      h3 {
+        margin-top: 1em;
+      }
+      > div {
+        padding: 0 1.6em;
+        transition: height 0.3s ease;
+        // height: 0;
+        overflow: hidden;
+
+        // animation
+        margin-top: -1px;
+        overflow: hidden;
+        max-height: 0px;
+        position: relative;
+        z-index: 10;
+        -webkit-transition: max-height 0.5s ease-in-out;
+        -moz-transition: max-height 0.5s ease-in-out;
+        -o-transition: max-height 0.5s ease-in-out;
+        -ms-transition: max-height 0.5s ease-in-out;
+        transition: max-height 0.5s ease-in-out;
+      }
+    }
+    .alpha-box > label {
+      width: 1.25em;
+      text-align: center;
+    }
+
+    DIV.min-max {
+      padding: 0;
+      INPUT {
+        border: 1px solid $black;
+        color: $black;
+      }
+      > div {
+        padding: 0 1.6em;
+        // transition: height 0.5s ease;
+        // height: 0;
+        overflow: hidden;
+        // animation
+        margin-top: -1px;
+        overflow: hidden;
+        max-height: 0px;
+        position: relative;
+        z-index: 10;
+        -webkit-transition: max-height 0.5s ease-in-out;
+        -moz-transition: max-height 0.5s ease-in-out;
+        -o-transition: max-height 0.5s ease-in-out;
+        -ms-transition: max-height 0.5s ease-in-out;
+        transition: max-height 0.5s ease-in-out;
+      }
+    }
+    .active-child {
+      transition: height 0.3s ease;
+      // height: 100px !important;
+      max-height: 500px !important;
+      overflow: auto !important;
+      // animation
+      -webkit-transition: max-height 0.5s ease-in-out;
+      -moz-transition: max-height 0.5s ease-in-out;
+      -o-transition: max-height 0.5s ease-in-out;
+      -ms-transition: max-height 0.5s ease-in-out;
+      transition: max-height 0.5s ease-in-out;
+    }
+    .checkbox-button__control {
+      border: 2px solid $black;
+    }
+    .checkbox-button__input:checked + .checkbox-button__control:after {
+      background-color: $black;
+    }
+    .checkbox-button__input:checked + .checkbox-button__control {
+      border-color: $black;
+    }
+    .header-filter-mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.8em 0;
+      button {
+        position: absolute;
+        left: 12px;
+        padding: 8px;
+      }
+    }
+    .flex-icon {
+      display: flex;
+      justify-content: space-between;
+    }
+    .gg-chevron-down {
+      box-sizing: border-box;
+      position: relative;
+      display: block;
+      transform: scale(var(--ggs, 1));
+      width: 22px;
+      height: 22px;
+      border: 2px solid transparent;
+      border-radius: 100px;
+    }
+    .gg-chevron-down::after {
+      content: '';
+      display: block;
+      box-sizing: border-box;
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-bottom: 2px solid;
+      border-right: 2px solid;
+      transform: rotate(45deg);
+      right: 6px;
+      top: 4px;
+    }
+  }
+}

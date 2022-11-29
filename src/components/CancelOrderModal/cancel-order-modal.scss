@@ -1,0 +1,27 @@
+.cancel-order {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .comment {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .cancel-order-action {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start !important;
+    .cancel {
+      min-width: 7rem;
+    }
+    .back {
+      min-width: 7rem;
+      margin-right: 1rem;
+    }
+  }
+}

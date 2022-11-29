@@ -1,0 +1,18 @@
+@import '../../styles/common';
+
+DIV.blk-share-social {
+  .font-weight-semi {
+    font-weight: $font-weight-semi-bold;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .div-img {
+    padding-top: 2px !important;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+}

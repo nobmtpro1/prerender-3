@@ -1,0 +1,74 @@
+@import '../../styles/common';
+
+.icon-bag {
+  margin: 0 1.2em 0 0.8em;
+  position: relative;
+
+  Button {
+    margin: auto;
+    // margin: 0 1.5em;
+    // position: relative;
+  }
+
+  .gg-color-bucket {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs, 1));
+    width: 10px;
+    height: 12px;
+    border: 2px solid;
+    border-bottom: 0;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    margin-top: -23px;
+    color: $main_black;
+  }
+
+  .gg-color-bucket::after,
+  .gg-color-bucket::before {
+    content: '';
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+  }
+
+  .gg-color-bucket::before {
+    border: 2px solid;
+    top: 5px;
+    left: -8px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .badge {
+    height: 20px;
+    display: flex;
+    padding: 0 6px;
+    z-index: 0;
+    position: absolute;
+    flex-wrap: wrap;
+    // font-size: 0.75rem;
+    @include font-size(14px);
+    min-width: 20px;
+    box-sizing: border-box;
+    transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    align-items: center;
+    font-weight: 400;
+    line-height: 1;
+    align-content: center;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: center;
+    background-color:var(--data-main-color-general);
+    color: $white;
+    margin-top: 4px;
+    margin-left: 3px;
+    border: 1px solid $white;
+  }
+
+  .invisible-badge {
+    transform: scale(0) translate(50%, -50%);
+    transition: transform 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+}

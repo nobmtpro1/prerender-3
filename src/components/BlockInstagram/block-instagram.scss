@@ -1,0 +1,24 @@
+@import '../../styles/common';
+
+SECTION.blk-instagram {
+  margin-bottom: 2em;
+  @include mobile {
+    margin-top: 2rem;
+  }
+  .sw-instagram-header-title {
+    p {
+      span {
+        font-size: convert-rem(31) !important;
+        color: #45443f;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 2em 0;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        @include mobile {
+          padding: 2em 0 1em;
+        }
+      }
+    }
+  }
+}

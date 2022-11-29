@@ -1,0 +1,21 @@
+@import '../../styles/common';
+SECTION.tab-Transactions {
+  > h1 {
+    margin-bottom: 40px;
+    @include font-size(32px);
+    font-weight: $font-weight-semi-bold;
+    @include mobile {
+      margin-bottom: 24px;
+      margin-top: 24px;
+      text-align: center;
+      @include font-size(24px);
+      text-transform: uppercase;
+    }
+    @include tablet {
+      margin-bottom: 24px;
+      margin-top: 24px;
+      @include font-size(24px);
+      text-transform: uppercase;
+    }
+  }
+}

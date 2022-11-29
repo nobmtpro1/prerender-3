@@ -1,0 +1,206 @@
+@import '../../styles/common';
+
+SECTION.blk-blog-list {
+  margin-bottom: 2em;
+  H3.title-block {
+    font-size: convert-rem(31);
+    color: #45443f;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 2em 0;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    @include mobile {
+      padding: 2em 0 1em;
+    }
+  }
+  DIV.list-article {
+    @include mobile {
+      & > div {
+        margin-bottom: 1em;
+        width: 90%;
+      }
+      display: flex;
+      flex-wrap: wrap;
+      margin: -16px;
+      justify-content: center;
+      & {
+        scrollbar-width: 4px;
+      }
+
+      /* Works on Chrome/Edge/Safari */
+      &::-webkit-scrollbar {
+        width: auto;
+        height: 8px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #f1f6f7;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: $black !important;
+        border-radius: 0px !important;
+      }
+      .wrapper-mobile {
+        box-shadow: 3px 4px 15px #e8e7e7;
+        padding: 0;
+        margin-bottom: 40px;
+        &:after {
+          content: '';
+          width: 64%;
+          min-height: 8px;
+          background: $primary_color;
+          display: block;
+          position: absolute;
+          right: 10%;
+        }
+        &:first-child:after {
+          background: #f9a811;
+        }
+      }
+    }
+    .content-mobile {
+      padding: 24px 16px;
+      text-align: center;
+    }
+    DIV.section-square {
+      z-index: 1;
+      width: 100%;
+      padding-bottom: 100%;
+      position: relative;
+      overflow: hidden;
+      @include mobile {
+        padding-bottom: 75%;
+      }
+      .article-item-box {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-size: cover;
+        right: 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        .content {
+          z-index: 99999;
+          position: absolute;
+          background: #2a676b;
+          bottom: 2em;
+          left: 2em;
+          right: 2em;
+          color: white;
+          padding: 1em;
+          text-align: center;
+          overflow: hidden;
+          max-height: 6em;
+          @include mobile {
+            bottom: 1em;
+            left: 1em;
+            right: 1em;
+          }
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: 0em;
+            left: 0;
+            background-image: url('../../images/block-video/bg-video-block.webp');
+            right: 0;
+            text-align: center;
+            opacity: 0.8;
+            height: 100%;
+            width: 100%;
+            background-size: 38%;
+            background-position: bottom;
+            background-repeat: no-repeat;
+          }
+
+          H4 {
+            font-size: convert-rem(16);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+            line-height: 1.5em;
+          }
+          P {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 0.5em;
+            opacity: 0;
+            transition: 0.2s ease-in-out;
+            @include mobile {
+              margin-top: 0;
+              opacity: 1;
+            }
+            IMG {
+              width: 1em;
+            }
+          }
+        }
+      }
+      PICTURE {
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .tags-box {
+      padding: 1em 0;
+      font-size: convert-rem(12);
+      @include mobile {
+        padding: 1em;
+        display: none;
+      }
+      @include tablet {
+        display: none;
+      }
+      SPAN {
+        color: #45443f;
+        text-transform: uppercase;
+        font-weight: $font-weight-normal;
+        margin-right: 0.5em;
+        vertical-align: middle;
+      }
+      A {
+        display: inline-block;
+        padding: 0.3em 0.6em;
+        border: 1px solid $border-green;
+        margin-right: 0.5em;
+        margin-bottom: 0.5em;
+        color: $primary_color;
+        text-transform: uppercase;
+        &:hover {
+          font-weight: $font-weight-normal;
+        }
+      }
+    }
+  }
+  .on-hover {
+    transform: scale(1.05);
+    transition: 0.2s all;
+    .content {
+      P {
+        opacity: 1 !important;
+      }
+    }
+  }
+  A.btn-see-all {
+    display: inline-block;
+    padding: 0.5em 1em;
+    border: 1px solid $border-green;
+    color: $primary_color;
+    text-transform: uppercase;
+    margin: 2em auto 1em;
+    display: table;
+    @include mobile {
+      margin: 3em auto 1em;
+    }
+  }
+}

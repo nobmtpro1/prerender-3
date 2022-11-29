@@ -1,0 +1,12 @@
+@import '../../styles/common';
+
+.video-wrapper {
+  .video-preview {
+    position: absolute;
+    object-fit: fill;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}

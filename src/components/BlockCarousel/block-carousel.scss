@@ -1,0 +1,172 @@
+@import '../../styles/common';
+
+SECTION.blk-carousel {
+  @include mobile {
+    margin-top: 0px;
+  }
+  DIV.carousel-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    width: 100vw;
+    min-height: 30rem;
+
+    @media only screen and (max-width: 599px) {
+      min-height: 12em !important;
+
+      &.has-text {
+        min-height: 130vw !important;
+        height: auto !important;
+        .slide-inner {
+          height: auto !important;
+        }
+        .slide-styles {
+          justify-content: flex-start;
+          height: auto !important;
+        }
+        picture {
+          position: relative;
+          height: auto;
+          img {
+            width: 100% !important;
+            height: 70vw !important;
+            object-fit: cover;
+          }
+        }
+
+        .content-slide {
+          position: relative;
+          bottom: unset;
+          top: unset;
+          display: flex;
+          justify-content: center !important;
+          align-items: center !important;
+        }
+      }
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 1024px) {
+      min-height: 20em !important;
+
+      &.has-text {
+        min-height: 100vw !important;
+        height: auto !important;
+        .slide-inner {
+          height: auto !important;
+        }
+        .slide-styles {
+          justify-content: flex-start;
+          height: auto !important;
+        }
+        picture {
+          position: relative;
+          height: auto;
+          img {
+            width: 100% !important;
+            height: 70vw !important;
+            object-fit: cover;
+          }
+        }
+
+        .content-slide {
+          position: relative !important;
+          bottom: unset;
+          top: unset;
+          display: flex;
+          justify-content: center !important;
+          align-items: center !important;
+        }
+      }
+    }
+
+    @media only screen and (min-width: 1025px) {
+      &.has-text {
+        min-height: 60vw !important;
+        height: auto !important;
+        .slide-inner {
+          height: auto !important;
+        }
+        .slide-styles {
+          justify-content: flex-start;
+          height: auto !important;
+        }
+        picture {
+          position: relative;
+          height: auto;
+          img {
+            width: 100% !important;
+            height: 50vw !important;
+            object-fit: cover;
+          }
+        }
+
+        .content-slide {
+          position: absolute !important;
+          bottom: 0 !important;
+          top: unset !important;
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+        }
+      }
+    }
+  }
+  DIV.content-slide {
+    position: absolute;
+    left: 0;
+    background: $primary_color;
+    color: $white;
+    min-height: 30%;
+    bottom: 0;
+    width: 35%;
+    padding: 2em;
+    text-align: center;
+    // max-height: 40%;
+    z-index: 55555;
+    overflow: hidden;
+    @include flexbox(flex, column, nowrap, center, center, stretch);
+    @include mobile_tablet {
+      width: 100%;
+      // position: relative;
+      overflow: hidden;
+    }
+    @include mobile {
+      min-height: 186px;
+    }
+    > p {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      text-transform: none;
+    }
+    &::after {
+      content: url('../../images/bg-slider-content.png');
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    H2 {
+      margin-bottom: 1em;
+      padding: 0 1em;
+      font-size: convert-rem(28);
+      font-weight: $font-weight-light;
+      letter-spacing: 0.1em;
+      @include mobile {
+        @include font-size(18px);
+      }
+    }
+    P {
+      font-size: 19px;
+      text-transform: uppercase;
+      font-weight: $font-weight-normal;
+      letter-spacing: 0.1em;
+      @include tablet_under {
+        font-size: 12px;
+      }
+    }
+  }
+}

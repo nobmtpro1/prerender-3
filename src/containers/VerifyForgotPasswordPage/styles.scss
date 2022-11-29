@@ -1,0 +1,216 @@
+@import '../../styles/common';
+.site-forgotPassword {
+  overflow: hidden;
+  // padding-top: 194px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  @include tablet_under {
+    padding-top: 0px;
+  }
+  img.resp-ic {
+    display: inherit;
+    margin: 0 auto;
+    width: 60%;
+  }
+  MAIN {
+    min-height: 81vh;
+  }
+  .form-forgot-password {
+    h1 {
+      margin-bottom: 8px;
+    }
+    .form-group {
+      margin-top: 24px;
+      width: 80%;
+    }
+    .button-group {
+      margin-top: 16px;
+      .reset-btn {
+        background: $primary_color;
+        color: $white;
+        padding: 10px 40px;
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          box-shadow: 1px 3px 6px #dddddd;
+        }
+      }
+    }
+  }
+  SECTION.adaptive-input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .validate-field {
+      background: $primary_color;
+      display: flex;
+      align-items: baseline;
+      @include font-size(14px);
+      padding: 8px 12px 8px 8px;
+      color: $white;
+      position: absolute;
+      right: -24px;
+      transform: translateX(100%);
+      border-radius: 2px;
+      img {
+        width: 14px;
+        display: inherit;
+        transform: translateY(2px);
+        margin: 0 4px;
+      }
+    }
+    .validate-field::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-right: 7px solid $primary_color;
+      border-bottom: 5px solid transparent;
+      position: absolute;
+      left: 1px;
+      transform: translateX(-100%);
+      top: 8px;
+    }
+    input {
+      width: 100%;
+      height: 45px;
+      padding: 14px 16px 0 10px;
+      outline: 0;
+      border: 1px solid #ddd;
+      background: $white;
+      color: $black;
+      font-size: 16px;
+    }
+    textarea {
+      width: 100%;
+      padding: 24px 16px 0 10px;
+      outline: 0;
+      border: 1px solid $white;
+      background: $white;
+      color: $black;
+      font-size: 16px;
+    }
+    label {
+      @include font-size(14px);
+      padding: 0 12px;
+      color: #999;
+      pointer-events: none;
+
+      position: absolute;
+      transform: translate(0, 15px) scale(1);
+      transform-origin: top left;
+      transition: all 0.2s ease-out;
+    }
+
+    &:focus-within label {
+      transform: translate(0, 6px) scale(0.8);
+    }
+
+    .Active {
+      transform: translate(0, 6px) scale(0.8);
+    }
+  }
+  SECTION.verify {
+    h4 {
+      font-size: 26px;
+      letter-spacing: 0.05em;
+    }
+    text-align: center;
+    animation: fadeIn 0.6s;
+    @keyframes fadeOut {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+    .lds-ellipsis {
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      height: 80px;
+    }
+    .lds-ellipsis div {
+      position: absolute;
+      top: 33px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: $primary_color;
+      animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    }
+    .lds-ellipsis div:nth-child(1) {
+      left: 8px;
+      animation: lds-ellipsis1 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(2) {
+      left: 8px;
+      animation: lds-ellipsis2 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(3) {
+      left: 32px;
+      animation: lds-ellipsis2 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(4) {
+      left: 56px;
+      animation: lds-ellipsis3 0.6s infinite;
+    }
+    @keyframes lds-ellipsis1 {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    @keyframes lds-ellipsis3 {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
+    @keyframes lds-ellipsis2 {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(24px, 0);
+      }
+    }
+  }
+  .status-box {
+    img {
+      width: 70px;
+      margin-bottom: 16px;
+    }
+    h3 {
+      font-size: 28px;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    h4 {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+    a {
+      text-decoration: underline;
+    }
+    text-align: center;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,219 @@
+@import '../../styles/common';
+
+.site-article {
+  // padding-top: 194px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  @include mobile {
+    padding: 0;
+    > div {
+      // padding-top: 70px;
+    }
+  }
+  .head-article {
+    h1 {
+      font-size: 42px;
+      text-align: center;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin: 1em 1em 1.5em;
+      @include mobile {
+        @include font-size(22px);
+      }
+    }
+  }
+  .breadcrumb {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    li:last-child {
+      &::after {
+        content: '';
+      }
+    }
+    li {
+      font-size: 14px;
+      text-transform: uppercase;
+      padding: 8px 8px 8px 0;
+    }
+    li::after {
+      display: inline-block;
+      padding: 0 4px 0 8px;
+      content: '>';
+    }
+  }
+  .tags-box {
+    padding: 1em 0;
+    font-size: convert-rem(12);
+    SPAN {
+      color: #45443f;
+      text-transform: uppercase;
+      font-weight: $font-weight-normal;
+      margin-right: 0.5em;
+      vertical-align: middle;
+    }
+    A {
+      display: inline-block;
+      padding: 0.2em 0.6em;
+      font-size: 14px;
+      border: 1px solid $border-green;
+      margin-right: 0.5em;
+      color: $primary_color;
+      &:hover {
+        font-weight: $font-weight-normal;
+      }
+    }
+  }
+
+  .thumbnail {
+    position: relative;
+    margin: 1em 0;
+    color: #ffffff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 30vw;
+    padding-bottom: 21%;
+    &::before {
+      content: '';
+      width: 1em;
+      height: 60%;
+      background: $primary_color;
+      position: absolute;
+      margin-left: -1em;
+      left: 0;
+    }
+  }
+  .wrapper-content {
+    padding: 1em 0 4em;
+    width: 70%;
+    margin: 0 auto;
+    @include mobile {
+      width: 100%;
+    }
+    p {
+      font-weight: 400;
+      line-height: 1.6em;
+    }
+  }
+  SECTION.blk-video {
+    margin: 3em -12em;
+    @include mobile {
+      margin: 0;
+    }
+    H2 {
+      font-weight: $font-weight-bold;
+      color: $black;
+      @include font-size(18px);
+      margin-bottom: 1em;
+    }
+    P {
+      overflow: hidden;
+      width: 100%;
+      color: $black;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      text-transform: none;
+    }
+    .wrapper-video {
+      height: 500px;
+      @include tablet {
+        height: 446px;
+      }
+    }
+    DIV.row {
+      box-shadow: 3px 4px 8px #e8e7e7;
+    }
+    .content-video {
+      background: $white;
+      &::before {
+        content: unset;
+      }
+    }
+  }
+
+  .images-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    gap: 8px 8px;
+    margin: 4em -12em 3em;
+    @include mobile {
+      margin: 0;
+    }
+    .wrapper-img {
+      width: 100%;
+      height: 20em;
+      overflow: hidden;
+      min-height: 100%;
+      max-height: 22em;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .row-span {
+      grid-column: 2;
+      grid-row: 1 / 3;
+      height: unset;
+      min-height: unset;
+      max-height: unset;
+    }
+  }
+  h2 {
+    margin-bottom: 0.5em;
+  }
+
+  .quote {
+    padding: 3em;
+    font-size: 21px;
+    // font-weight: 500;
+    color: $primary_color;
+    position: relative;
+    @include mobile {
+      padding: 3em 1em;
+      font-size: 18px;
+    }
+    &::before {
+      content: '\0022';
+      display: block;
+      position: absolute;
+      top: 0.5em;
+      left: -18px;
+      font-size: 5em;
+      font-style: italic;
+      @include mobile {
+        font-size: 4em;
+        left: -14px;
+        top: 0.6em;
+      }
+    }
+    &::after {
+      content: '';
+      width: 32%;
+      height: 2px;
+      background: $primary_color;
+      display: block;
+      margin-top: 1em;
+    }
+  }
+  SECTION.blk-product {
+    padding: 2em 0;
+    margin: 3em -12em 0;
+    @include mobile {
+      margin: 0;
+      .title-block {
+        padding: 0;
+      }
+    }
+    .title-block {
+      padding: 0 0 2em;
+    }
+  }
+}
